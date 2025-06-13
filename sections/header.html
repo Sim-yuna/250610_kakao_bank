@@ -583,6 +583,13 @@
         $('.dropBtn').click(function() {
             $('.dropdown').toggleClass('is_active');
         });
+
+        $(window).click(function(event) {
+            // 클릭한 요소가 dropBtn 밖 요소라면,
+            if(!$(event.target).closest('.dropBtn').length){
+                $('.dropdown').removeClass('is_active');
+            }
+        });
     </script>
 </body>
 
