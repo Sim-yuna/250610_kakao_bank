@@ -19,6 +19,18 @@
                     <img src="../imgs/home_arr.png" alt="">
                 </a>
             </div>
+
+            <div class="slider_box">
+                <div class="arrows">
+                    <div><img src="../imgs/img-left.png" alt=""></div>
+                    <div><img src="../imgs/img-right.png" alt=""></div>
+                </div>
+                <div class="slides">
+                    <div><img src="../imgs/card-1.png" alt=""></div>
+                    <div class="center"><img src="../imgs/card-2.png" alt=""></div>
+                    <div><img src="../imgs/card-3.png" alt=""></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -118,7 +130,7 @@
             padding-top: 150px;
         }
 
-
+        /* 텍스트 시작 */
         .checkcard_box h3 {
             font-size: 40px;
             line-height: 1.35;
@@ -164,6 +176,44 @@
             display: block;
         }
 
+        /* 슬라이더 시작 */
+        .checkcard_box .slider_box {
+            position: relative;
+        }
+
+        .checkcard_box .slider_box .slides {
+            display: flex;
+            justify-content: center;
+        }
+
+        .checkcard_box .slider_box .slides > div > img {
+            width: 240px;
+            display: block;
+        }
+
+        .checkcard_box .slider_box .slides > div.center {
+            margin-left: -70px;
+            margin-right: -70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .checkcard_box .slider_box .slides > div.center > img {
+            transform: scale(1.2);
+        }
+
+        .checkcard_box .slider_box .arrows div {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+            cursor: pointer;
+        }
+
+        .checkcard_box .slider_box .arrows div:last-child {
+            left: auto;
+            right: 30px;
+        }
         /* 체크카드 끝 */
     </style>
 </body>
