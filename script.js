@@ -1,5 +1,52 @@
 console.clear();
 
+// 헤더 스크립트 시작
+function logoShowAndHide() {
+    $(window).scroll(function() {
+        let $this = $(this);
+        let scTop = $this.scrollTop(); //스크롤 위치
+
+        if( scTop > 0 ) {
+            $(".logo_wrap").addClass('is_scroll');
+        } else {
+            $(".logo_wrap").removeClass('is_scroll');
+        }
+        });
+}
+
+logoShowAndHide();
+
+$('.dropBtn').click(function() {
+    $('.dropdown').toggleClass('is_active');
+});
+
+$(window).click(function(event) {
+    // 클릭한 요소가 dropBtn 밖 요소라면,
+    if(!$(event.target).closest('.dropBtn').length){
+        $('.dropdown').removeClass('is_active');
+    }
+});
+//헤더 스크립트 끝
+
+// 슬릭슬라이더 끝
+function SliderBox1__init() {
+    $('.slider_box > .slick').slick({
+        dots:false,
+        autoplay: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode:true,
+        centerPadding:0,
+        arrows:true,
+        prevArrow: ".slider_box > .arrows > .btn_arrow_left",
+        nextArrow: ".slider_box > .arrows > .btn_arrow_right",
+    });
+}
+
+SliderBox1__init();
+// 슬릭 슬라이더 끝
+
+
 /* 발견되면 활성화시키는 라이브러리 시작 */
 function ActiveOnVisible__init() {
 $('.active-on-visible').each(function(index, node) {
